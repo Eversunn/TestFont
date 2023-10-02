@@ -1,0 +1,97 @@
+
+
+body{
+    background-color: aliceblue;
+}
+
+.slider__container{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    /* overflow: hidden; */
+    background-color: aliceblue;
+    width: 300px;
+    height: 300px;
+    outline: solid 3px black;
+    margin: 20px;
+    overflow: hidden;
+
+}
+
+
+.slider__row{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: aliceblue;
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+button{
+    z-index: 1;
+    height: 30px;
+    width: 30px;
+}
+
+.circles{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 10px;
+    width: 300px;
+    padding: 10px;
+    border: solid 3px black;
+    flex-wrap: wrap;
+}
+
+.circle{
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background-color: aquamarine;
+    border: solid 1px aquamarine;
+    outline: solid 1px aquamarine;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.active{
+    background-color: rgb(8, 8, 8);
+}
+
+.element{
+    display: flex;
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.button__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
