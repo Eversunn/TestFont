@@ -1030,15 +1030,17 @@ text-align: center;
 .cookie{
     background-color: #FFF;
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translate(-50%);
+    bottom: -130px;
+    right: 0;
+    left: 0;
+    margin: auto;
     z-index: 5;
     padding: 30px;
     border-radius: 18px;
     width: 85vw;
     max-width: 1250px;
-    transition: 2s;
+    transition: transform 2s;
+    transform: translateY(-160px);
 }
 .cookie__container{
     display: flex;
