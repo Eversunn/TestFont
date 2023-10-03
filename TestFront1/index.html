@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budss Main</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="/script.js"defer></script>
+</head>
+<body>
+    <header class="header">
+            <div class="header__topnav">
+                <div class="grid topnav--wrap">
+                    <div class="row  nowrap">
+                        <div class="column">
+                            <div class="topnav__items">
+                                <span class="fontB1 topnav__item topnav__item__active" id="topnavBusiness">For Business</span>
+                                <span class="fontB1 topnav__item" id="topnavCustomers">For customers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="navbar">
+                <div class="logo">
+                    <div class="logo__container">
+                        <img class="logo__img" src="/img/logo.svg" alt="">
+                        <span class="logoname">budss</span>
+                    </div>
+                </div>
+                <span class="button__container navbar__button" id="navbarButton">
+                    <button class="btn btn-black modal__activator">Contact sales</button>
+                </span>
+                <span class="button__container navbar__customer hidden" id="navbarCustomer">
+                    <span class="customer__container" id="navbarCustomerContainer">
+                        <a href=""><img src="img/Google.svg" alt=""></a>
+                        <span class="navbar__verticalrule"></span>
+                        <a href=""><img src="img/Apple.svg" alt=""></a>
+                    </span>
+                </span>
+                <span class="navbar__burger" id="navbarBurger">
+                    <span class="burger"><img src="img/Burger.svg" alt=""></span>
+                </span>
+        </div>
+        <div class="burger__menu hidden" id="burgerMenu">
+            <span class="burger__exit" id="burgerExit"><img src="/img/burgerexit.svg" alt=""></span>
+            <div class="burger__button button__container">
+                <button class="btn btn-black modal__activator">Contact sales</button>
+            </div>
+
+            <span class="burger__navlinks">
+                <a class="fontS5 footer__navitem" href="">For Business</a>
+                <a class="fontS5 footer__navitem" href="">For Customers</a>
+                <a class="fontS5 footer__navitem" href="">Privacy Policy</a>
+                <a class="fontS5 footer__navitem" href="">Terms Of Use - Seller</a>
+                <a class="fontS5 footer__navitem" href="">Terms of Use - Sellers & Customers</a>
+            </span>
+        </div>
+        <div class="modal hidden" id="registerModal">
+            <span class="modal__exit" id="modalExit"><img src="/img/X.svg" alt=""></span>
+            <div class="modal__form" id="modalForm">
+                <div class="modal__field">
+                    <div class="modal__text-container">
+                        <span class="fontB3">Name</span>
+                        <span class="fontB3 modal__textstyle hidden" id="starName">*</span>
+                    </div>
+                    <input class="modal__input" id="username" name="name" type="text" placeholder="Enter Name">
+                    <span class="fontB7 modal__warning-text hidden" id="warningName">this field is required</span>
+                </div>
+                <div class="modal__field">
+                    <div class="modal__text-container">
+                        <span class="fontB3">Email</span>
+                        <span class="fontB3 modal__textstyle hidden" id="starEmail">*</span>
+                    </div>
+                    <input class="modal__input" id="email" name="email" type="text" placeholder="Enter Email">
+                    <span class="fontB7 modal__warning-text hidden" id="warningEmail">this field is required</span>
+                </div>
+                <div class="modal__field">
+                <div class="modal__text-container">
+                    <span class="fontB3">Phone Number</span>
+                    <span class="fontB3 modal__textstyle hidden" id="starPhone">*</span>
+                </div>
+                <input class="modal__input input-flag" type="tel" id="phoneNumber" name="phoneNumber" placeholder=" + 7 900 000 00 00">
+                <span class="fontB7 modal__warning-text hidden" id="warningPhone">this field is required</span>
+                <img  src="img/Flag.svg" alt="" class="shadow-flag">
+            </div>
+            <div class="modal__field">
+                <span class="fontB3">Company</span>
+                <input class="modal__input" id="companyName" name="companyName" type="text" placeholder="Enter Company">
+            </div>
+            <div class="modal__field">
+                <span class="fontB3">Website/Store Url</span>
+                <input class="modal__input" type="text" id="websiteName" name="websiteName" placeholder="Enter Website/Store Url">
+            </div>
+            <span class="fontB2 modal__warning-text hidden" id="warningText">Please fill in all required fields</span>
+            <div class="modal__rules fontB6">By submitting this form you are agreeing to Budss’s <a href="">Privacy Policy </a>and<a href=""> Terms of Use </a>
+        </div>
+        <button class="btn-disabled modal__btn" id="modalButton" disabled>Contact sales</button>
+        </div>
+        <div class="modal__approved hidden" id="modalApproval">
+            <img src="img/modalApproved.svg" alt="">
+            <span  class="fontS1">Thank you!</span>
+            <p>Thank you, we have received your application and will contact you soon!</p>
+            <button class="btn" id="approvalButton">Super!</button>
+        </div>
+        </div>
+        <div class="cookie" id="cookieModal">
+            <div class="cookie__container">
+                <p class="fontS7 cookie__text">This website uses cookies to ensure you get the best experience on our website. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
+                <div class="cookie__buttons">
+                    <button class="btn cookie__button cookieButton">Accept</button>
+                    <button class="btn cookie__button cookie__decline cookieButton">Decline</button>
+                </div>
+                <img class="cookie__exit" id="cookieExit" src="img/X.svg" alt="">
+            </div>
+        </div>
+        <main>
+        <div class="top">
+            <div class="top__container">
+                <div class="top__textblock">
+                    <h1 class="fontHeadMain">Everyone<br>is an Influencer</h1>
+                    <p class="fontS6">Budss is a payments as a service and WOM engine dedicated to acquisition and retention of customers to your business.</p>
+                    <div class="top__button button__container">
+                        <button  class="btn btn-black modal__activator">Contact sales</button>
+                    </div>
+                </div>
+                <div class="top__images">
+                    <picture>
+                        <source media="(max-width:460px)" srcset= "img/girlsmall.png, img/girl@2x.png 2x">
+                        <source type="image/webp" srcset="img/girl.webp, img/girl@2x.webp 2x">
+                        <img class="image__girl" src="img/girl.png" srcset="img/girl@2x.png 2x" alt="">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about__container">
+                <h1 class="fontHeadMain">About Budss</h1>
+                <div class="about__infocontainer">
+                    <div class="about__topinfo">
+                        <p class="fontS1 about__firstpara">Payment as a service,<br>powered seamlessly by<br>our network of shoppers</p>
+                        <img  src="img/Pline.svg" alt="">
+                    </div>
+                    <div class="about__infoblock">
+                    <div class="about__row">
+                        <div class="infoblock__item">
+                            <img src="/img/yellowstar.svg" alt="">
+                            <h2 class="infoblock__header fontInfoblockHead">Contactless</h2>
+                            <p class="fontS3">Budss uses near field communication (NFC) for making contactless payments.</p>
+                        </div>
+                        <div class="infoblock__item">
+                            <img src="/img/purpleCurvedArrow.svg" alt="">
+                            <h2 class="infoblock__header fontInfoblockHead">Increased Buying Power</h2>
+                            <p class="fontS3">Returning customers spend up to 3X more.</p>
+                        </div>
+                    </div>
+                    <div class="about__row">
+                        <div class="infoblock__item">
+                        <img src="img/cyanWaveShape.svg" alt="">
+                        <h2 class="infoblock__header fontInfoblockHead">Analytics & Insights</h2>
+                        <p class="fontS3">Gain a holistic view into your customers’ buying behavior & purchasing patterns. </p>
+                        </div>
+                        <div class="infoblock__item">
+                        <img src="img/greenChains.svg" alt="">
+                        <h2 class="infoblock__header fontInfoblockHead">Fraud Protection</h2>
+                        <p class="fontS3">Budss handles all payments with a fraud prevention algorithm to flag high risk purchases & a user set PIN code to keep payment info secure. </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <img class="about__sideimg" src="img/sideElipse2.svg" alt="">
+        </div>
+        <div class="phone">
+            <div class="line__container">
+            <div class="line rightline">
+                <div class="line__block phone__right" >
+                    <h3 class="phonetext phonecyan">How Buds Work</h3>
+                    <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                </div>
+                <div class="line__block phone__right" >
+                    <h3 class="phonetext phonecyan">How Buds Work</h3>
+                    <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                </div>
+            </div>
+        </div>
+            <div class="line__container">
+                <div class="line">
+                    <div class="line__block phone__left">
+                        <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                        <h3 class="phonetext phonepurple">How Buds Work</h3>
+                    </div>
+                    <div class="line__block phone__left">
+                        <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                        <h3 class="phonetext phonepurple">How Buds Work</h3>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="line__container">
+                <div class="line rightline">
+                    <div class="line__block phone__right2">
+                        <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                        <h3 class="phonetext phoneorange">How Buds Work</h3>
+                    </div>
+                    <div class="line__block phone__right2">
+                        <h3 class="phonetext phoneshadow">How Buds Work</h3>
+                        <h3 class="phonetext phoneorange">How Buds Work</h3>
+                    </div>
+            </div>
+        </div>
+        <picture>
+            <source type="image/webp" srcset="img/phone.webp, img/phone@2x.webp 2x">
+            <img class="phone__img" src="img/phone.png" srcset="img/phone@2x.png 2x" alt="">
+        </picture>
+        </div>
+        <div class="numberblock">
+        <div class="numberblock__item">
+            <span class="fontHeadAlt">15%</span>
+            <span class="fontS2">Increase in Purchase Amount</span>
+        </div>
+        <div class="numberblock__item">
+            <span class="fontHeadAlt">30%</span>
+            <span class="fontS2">Growth in Annual Sales</span>
+        </div>
+        <div class="numberblock__item">
+            <span class="fontHeadAlt">10%</span>
+            <span class="fontS2">Growth in New Customers</span>
+        </div>
+        </div>
+        <div class="whypage">
+            <div class="whypage__texthead">
+                <span class="fontHeadAlt">Why Budss</span>
+                <span class="fontS1 whypage__paragraph">We Provide Advanced Payment Solutions  To Grow Your Business
+                </span>
+                <img class="whypage__img" src="img/highlight2.svg" alt="">
+            </div>
+            <div class="whypage__tablets">
+                <div class="tablets__row">
+                <div class="tablet tablet__1">
+                    <picture>
+                        <source media="(max-width:1024px)"
+                        srcset="img/tablet1ALT.svg">
+                        <img src="img/1tablet.svg" alt="">
+                    </picture>
+                    <div class="tablet__1__textWrapper">
+                        <span class="fontTabletHead">Turn your customers into loyal influencers</span>
+                        <span class="fontS6">Budss helps businesses harness the exponential power of loyal customers for acquisition and retention.</span>
+                    </div>
+                </div>
+                <div class="tablet tablet__2">
+                    <div class="tablet__2__textWrapper">
+                        <span class="fontTabletHead">Harness the power of buying in bulk</span>
+                        <span class="fontS6">Get at least 2X more sales with Budss Buying Groups. Your customer base will grow exponentially as your customers add their friends & family to your personalized group.</span>
+                    </div>
+                        <img class="basket__1" src="img/purplebag.svg" alt="">
+                    <img class="basket__2" src="img/yellowbag.svg" alt="">
+                    <img class="basket__3" src="img/bluebag.svg" alt="">
+                </div>
+            </div>
+                <div class="tablets__row">
+                <div class="tablet tablet__3">
+                    <div class="tablet__3__textWrapper">
+                        <span class="fontTabletHead">Supercharge Loyalty With Instant Cash Back</span>
+                        <span class="fontS6">Budss allows for shoppers to earn immediate cash back at their favorite stores.</span>
+                    </div>
+                    <img src="img/3tablet.svg" alt="">
+                </div>
+                <div class="tablet tablet__4">
+                    <div class="tablet__4__textWrapper">
+                        <span class="fontTabletHead">Seasoned with AI and Gamification</span>
+                        <span class="fontS6">AI programming creates a personalized customer journey, offering recommendations for their next purchase and optimizing rewards for after purchase.</span>
+                    </div>
+                        <img src="img/4tablet.svg" alt="">
+                </div>           
+            </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom__button-block">
+                <h2 class="fontHeadAlt">Let Your Business Grow</h2>
+                <div class="button__container">
+                    <button class="btn modal__activator">Contact Sales</button>
+                </div>
+            </div>
+            <div class="bottom__about">
+                <div class="bottom__text-container">
+                    <span class="fontHeadMain">Your Brand Awareness Maters</span>
+                    <p class="fontS6">Budss is a husle free solution to put your brand on any digital surface including Instagram, Facebook, Twitter and TikTok</p>
+                </div>
+                    <div class="bottom__row">
+                        <div class="bottom__img bottom__img1">
+                            <img class="" src="/img/facebook.svg" alt="">
+                        </div>
+                        <div class="bottom__img bottom__img2">
+                            <img class="" src="/img/twitterlogo.svg" alt="">
+                        </div>
+                        <div class="bottom__img bottom__img3">
+                            <img class="" src="img/instalogo.svg" alt="">
+                        </div>
+                        <div class="bottom__img bottom__img4">
+                            <img class="" src="/img//tiktoklogo.svg" alt="">
+                        </div>
+                </div>
+            </div>
+            <div class="bottom__logos">
+                <img class="bottom__logo" src="img/logo1.svg" alt="">
+                <img class="bottom__logo" src="img/logo2.svg" alt="">
+                <img class="bottom__logo" src="img/logo3.svg" alt="">
+                <img class="bottom__logo" src="img/logo4.svg" alt="">
+                <img class="bottom__logo" src="img/logo5.svg" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__nav">
+            <div class="footer__container">
+                <div class="logo footer__logo">
+                    <div class="logo__container">
+                        <img class="logo__img" src="/img/logo.svg" alt="">
+                        <span class="logoname">budss</span>
+                    </div>
+                </div>
+                <span class="footer__navlinks">
+                    <a class="fontS5 footer__navitem" href="">For Business</a>
+                    <a class="fontS5 footer__navitem" href="">For Customers</a>
+                    <a class="fontS5 footer__navitem footer__hiddenitem" href="">Privacy Policy</a>
+                    <a class="fontS5 footer__navitem footer__hiddenitem" href="">Terms Of Use - Seller</a>
+                    <a class="fontS5 footer__navitem footer__hiddenitem" href="">Terms of Use - Sellers & Customers</a>
+                </span>
+            </div>
+            <span class="button__container footer__btn">
+                <button class="btn btn-black modal__activator">Contact sales</button>
+            </span>
+            <span class="footer__storelinks">
+                <a href=""><img src="/img/appstore.svg" alt=""></a>
+                <a href=""><img src="/img/googleplay.svg" alt=""></a>
+            </span>
+        </div>
+        <hr class="horuler">
+        <div class="footer__info">
+            <span class="footer__copyright fontB5" >© Copyright 2023, All Rights Reserved by Budss</span>
+            <span class="footer__rules">
+                <a href="" class="fontB6 rulefont">Privacy Policy</a>
+                <a href="" class="fontB6 rulefont">Terms Of Use - Seller</a>
+                <a href="" class="fontB6 rulefont">Terms of Use - Sellers & Customers</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
